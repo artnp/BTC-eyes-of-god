@@ -1,7 +1,7 @@
 # BTC-eyes-of-god
 BTC ตาทิพย์
 
-ใช้ Node.js ให้ติดตั้ง npm package
+สคริปต์ใช้ร่วมกับ Node.js ให้ติดตั้ง npm package ดังนี้
 - axios
 - cheerio
 - localstorage
