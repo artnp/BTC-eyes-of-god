@@ -206,7 +206,7 @@ $(".progressbarss").animate({
 
       fibo382 = (normal_price-((normal_price - low_price)*0.382)).toFixed(0)
       // document.getElementById('fibo382').innerHTML = (normal_price-((normal_price - low_price)*0.382)).toFixed(0)
-      percentage382 = (100-((fibo382 - data.lastPrice )*100)/ (fibo382 - low_price))
+      percentage382 = (100-((fibo382 - data.lastPrice )*100)/ (fibo382 - fibo618))
       if (percentage382 > 100){
           percentage382 = 100
         }
