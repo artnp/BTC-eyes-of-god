@@ -114,7 +114,7 @@ background-image: linear-gradient(to right, green , #1CE23F);
 <tr>
 <td>Fibonacci Retracement : 61.8%<div class="containerss"><div class="progressbarss2"></div></div></div></td>
 <td><font color='white'>...</font</td>
-<td>Fibonacci Retracement: 38.2%<div class="containerss"><div class="progressbarss2"></div></div></div></td>
+<td>Fibonacci Retracement: 38.2%<div class="containerss"><div class="progressbarss3"></div></div></div></td>
 </tr>
 </tbody>
 </table>
@@ -211,7 +211,7 @@ $(".progressbarss").animate({
           percentage382 = 100
         }
         $(".progressbarss3").animate({
-	  width: percentage618 + "%"
+	  width: percentage382 + "%"
 },100);
 
         
