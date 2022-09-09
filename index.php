@@ -151,7 +151,75 @@ localStorage.setItem("thirtyrates", "<?php $thirtyrates = fopen('scratch/thirtyr
 localStorage.setItem("tradingbeasts", "<?php $tradingbeasts = fopen('scratch/tradingbeasts','r');echo fgets($tradingbeasts);fclose($tradingbeasts);?>");
 localStorage.setItem("vpriceprediction", "<?php $vpriceprediction = fopen('scratch/vpriceprediction','r');echo fgets($vpriceprediction);fclose($vpriceprediction);?>");
 localStorage.setItem("walletinvestor", "<?php $walletinvestor = fopen('scratch/walletinvestor','r');echo fgets($walletinvestor);fclose($walletinvestor);?>");
-normal_price = ((parseFloat(localStorage.getItem("allforecast")) + parseFloat(localStorage.getItem("bitgur")) + parseFloat(localStorage.getItem("coincodex")) + parseFloat(localStorage.getItem("coinforecast")) + parseFloat(localStorage.getItem("cryptopredictions")) + parseFloat(localStorage.getItem("thirtyrates")) + parseFloat(localStorage.getItem("tradingbeasts")) + parseFloat(localStorage.getItem("vpriceprediction")) + parseFloat(localStorage.getItem("walletinvestor")))/9).toFixed(0)
+
+bitgurP = parseFloat(localStorage.getItem("bitgur"))
+allforecastP = parseFloat(localStorage.getItem("allforecast"))
+coincodexP = parseFloat(localStorage.getItem("coincodex"))
+coinforecastP = parseFloat(localStorage.getItem("coinforecast"))
+cryptopredictionsP = parseFloat(localStorage.getItem("cryptopredictions"))
+thirtyratesP = parseFloat(localStorage.getItem("thirtyrates"))
+tradingbeastsP = parseFloat(localStorage.getItem("tradingbeasts"))
+vpricepredictionP = parseFloat(localStorage.getItem("vpriceprediction"))
+walletinvestorP = parseFloat(localStorage.getItem("walletinvestor"))
+if(isNaN(bitgurP)) bitgurP = 0
+if(isNaN(allforecastP)) allforecastP = 0
+if(isNaN(coincodexP)) coincodexP = 0
+if(isNaN(coinforecastP)) coinforecastP = 0
+if(isNaN(cryptopredictionsP)) cryptopredictionsP = 0
+if(isNaN(thirtyratesP)) thirtyratesP = 0
+if(isNaN(tradingbeastsP)) tradingbeastsP = 0
+if(isNaN(vpricepredictionP)) vpricepredictionP = 0
+if(isNaN(walletinvestorP)) walletinvestorP = 0
+
+if (bitgurP === 0) {
+  bitgurPC = 0
+} else {
+  bitgurPC = 1
+}
+if (allforecastP === 0) {
+  allforecastPC = 0
+} else {
+  allforecastPC = 1
+}
+if (coincodexP === 0) {
+  coincodexPC = 0
+} else {
+  coincodexPC = 1
+}
+if (coinforecastP === 0) {
+  coinforecastPC = 0
+} else {
+  coinforecastPC = 1
+}
+if (cryptopredictionsP === 0) {
+  cryptopredictionsPC = 0
+} else {
+  cryptopredictionsPC = 1
+}
+if (thirtyratesP === 0) {
+  thirtyratesPC = 0
+} else {
+  thirtyratesPC = 1
+}
+if (tradingbeastsP === 0) {
+  tradingbeastsPC = 0
+} else {
+  tradingbeastsPC = 1
+}
+if (vpricepredictionP === 0) {
+  vpricepredictionPC = 0
+} else {
+  vpricepredictionPC = 1
+}
+if (walletinvestorP === 0) {
+  walletinvestorPC = 0
+} else {
+  walletinvestorPC = 1
+}
+
+dividebynine = bitgurPC + allforecastPC + coincodexPC + coinforecastPC + cryptopredictionsPC + thirtyratesPC + tradingbeastsPC + vpricepredictionPC + walletinvestorPC
+
+normal_price = ((allforecastP + bitgurP + coincodexP + coinforecastP + cryptopredictionsP + thirtyratesP + tradingbeastsP + vpricepredictionP + walletinvestorP)/dividebynine).toFixed(0)
   document.getElementById('allprice').innerHTML = normal_price
 
     const getBtcData = async () => {
@@ -170,7 +238,7 @@ normal_price = ((parseFloat(localStorage.getItem("allforecast")) + parseFloat(lo
         }
         
 
-        document.getElementById('percent100').innerHTML = 'ราคาเป้าหมายรวม: ' + (100-((normal_price - data.lastPrice )*100)/(normal_price - low_price)).toFixed(2) + '/100 %'
+        document.getElementById('percent100').innerHTML = 'ราคาเป้าหมายรวม: ' + (100-((normal_price - data.lastPrice )*100)/(normal_price - low_price)).toFixed(1) + '/100 %'
         percentage = (100-((normal_price - data.lastPrice )*100)/(normal_price - low_price)).toFixed(2)
         if (percentage > 100){
           percentage = 100
@@ -206,6 +274,7 @@ $(".progressbarss").animate({
 
       fibo382 = (normal_price-((normal_price - low_price)*0.382)).toFixed(0)
       // document.getElementById('fibo382').innerHTML = (normal_price-((normal_price - low_price)*0.382)).toFixed(0)
+      //แก้เดิมpercentage382 = (100-((fibo382 - data.lastPrice )*100)/ (fibo382 - low_price))
       percentage382 = (100-((fibo382 - data.lastPrice )*100)/ (fibo382 - fibo618))
       if (percentage382 > 100){
           percentage382 = 100
