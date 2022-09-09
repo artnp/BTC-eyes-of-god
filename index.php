@@ -106,7 +106,9 @@ background-image: linear-gradient(to right, green , #1CE23F);
   "save_image": false,
   "studies": [
     "LinearRegression@tv-basicstudies",
-    "MoonPhases@tv-basicstudies"
+    "MoonPhases@tv-basicstudies",
+    "WilliamsAlligator@tv-basicstudies",
+    "RSI@tv-basicstudies"
   ],
   "container_id": "tradingview_187d9"
 }
