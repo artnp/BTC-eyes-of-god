@@ -85,29 +85,39 @@ background-image: linear-gradient(to right, green , #1CE23F);
 
   </div>
 </div>
-<br><center>ตัดสินใจ [2]
-<!-- TradingView Widget BEGIN -->
-<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+<center>ตัดสินใจ [2]
+<div class="tradingview-widget-container">
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
   {
-  "interval": "5m",
-  "width": 425,
-  "isTransparent": true,
-  "height": 360,
+  "width": 980,
+  "height": 420,
   "symbol": "BINANCE:BTCBUSD",
-  "showIntervalTabs": false,
+  "interval": "15",
+  "timezone": "Etc/UTC",
+  "theme": "light",
+  "style": "1",
   "locale": "th_TH",
-  "colorTheme": "light"
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "hide_top_toolbar": true,
+  "hide_legend": true,
+  "save_image": false,
+  "studies": [
+    "LinearRegression@tv-basicstudies",
+    "MoonPhases@tv-basicstudies"
+  ],
+  "container_id": "tradingview_187d9"
 }
+  );
   </script>
-<!-- TradingView Widget END --><br>
+</div>
+<!-- TradingView Widget END -->
+<br>
 ตัดสินใจ [3] </center>
 </center>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-
-
-
-
-
 <center>
 <table>
 <tbody>
